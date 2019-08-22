@@ -62,14 +62,11 @@ $url			The link to the API endpoint (Using the link to the API endpoint and the 
 $content		The raw JSON data from the API.
 $json			The decoded JSON data from the API (JSON = JavaScript Object Notation).
 $target			Your channel's username (with correct capitalisation).
+$avatar			Your channel's avatar link
 $channel		Channel link (using Mixer's url and the $target variable (your username)).
-$image			The stream image displaying in your tweet.  You can use either your avatar or social thumbnail.
-			Comment and uncomment accordingly.
 $player			Embedded video player link (using Mixer's url and the $target variable (your username)).
 $streaming		The first declaration sets the variable to "Streaming: ".
 			The second appends what is streaming to the variable (e.g. Fallout 76, Overwatch, Web Show, etc.).
-$image			Social thumbnail link.  This is what is used to display the image in your tweet.
-$avatar			Avatar link
 $title			The title of your stream (e.g. Open lobby, playing with followers.).
 
 The settings below configures your Twitter Card as follows:
@@ -83,8 +80,8 @@ $url = "https://mixer.com/api/v1/channels/$mixer";
 $content = file_get_contents( $url );
 $json = json_decode( $content, true );
 $target = $json[ "user" ][ "username" ];
+$avatar = $json[ "user" ][ "avatarUrl" ];
 $channel = "https://mixer.com/$target";
-$image = $json[ "user" ][ "avatarUrl" ];
 /*
 $image = $json[ "thumbnail" ][ "url" ];
 */
@@ -128,7 +125,7 @@ This is the HTML for the webpage
 	<meta name="twitter:site" content="<? echo $twitter; ?>">
 	<meta name="twitter:title" content="<? echo $title; ?>">
 	<meta name="twitter:description" content="<? echo $streaming; ?>">
-	<meta name="twitter:image" content="<? echo $image; ?>">
+	<meta name="twitter:image" content="<? echo $avatar; ?>">
 	<meta name="twitter:player" content="<? echo $player; ?>">
 	<meta name="twitter:player:width" content="640">
 	<meta name="twitter:player:height" content="360">
