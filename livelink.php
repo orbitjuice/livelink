@@ -8,11 +8,12 @@ Web:		orbitjuice.com
 Twitter:	@orbitjuice
 Requires:	PHP v5.x or higher
 
-Live Link uses Twitter's "Cards" feature to embed a your Mixer stream into your go-live tweet, allowing people to watch your stream via Twitter.
+Live Link uses Twitter's "Cards" feature to embed your Mixer stream into a go-live tweet,
+allowing people to watch your stream via Twitter.
 
 Installation:
 --------------------------------------------------------------------------------
-Adjust the variables below as necessary and save as a .php file on your webserver running PHP v5.x (or higher).
+Adjust the variables below as necessary and save as a .php file on your webserver.
 
 More information:
 --------------------------------------------------------------------------------
@@ -40,9 +41,7 @@ $twitter		Your lowercase Twitter username (e.g. @username).
 $mixer = "username";
 $twitter = "@username";
 /*
-
-These are sending a raw HTTP header so the webpage is not cached.
-
+These are sending raw HTTP headers instructing the users browser not to cache the web page.
 */
 header("Expires: Tue, 01 Jan 2000 00:00:00 GMT");
 header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
@@ -64,9 +63,11 @@ $content		The raw JSON data from the API.
 $json			The decoded JSON data from the API (JSON = JavaScript Object Notation).
 $target			Your channel's username (with correct capitalisation).
 $channel		Channel link (using Mixer's url and the $target variable (your username)).
-$image			The stream image displaying in your tweet.  You can use either your avatar or social thumbnail.  Comment and uncomment accordingly.
+$image			The stream image displaying in your tweet.  You can use either your avatar or social thumbnail.
+			Comment and uncomment accordingly.
 $player			Embedded video player link (using Mixer's url and the $target variable (your username)).
-$streaming		The first declaration sets the variable to "Streaming: ".  The second appends what is streaming to the variable (e.g. Fallout 76, Overwatch, Web Show, etc.).
+$streaming		The first declaration sets the variable to "Streaming: ".
+			The second appends what is streaming to the variable (e.g. Fallout 76, Overwatch, Web Show, etc.).
 $image			Social thumbnail link.  This is what is used to display the image in your tweet.
 $avatar			Avatar link
 $title			The title of your stream (e.g. Open lobby, playing with followers.).
