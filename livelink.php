@@ -71,8 +71,8 @@ $title			The title of your stream (e.g. Open lobby, playing with followers.).
 
 The settings below configures your Twitter Card as follows:
 
-$image			Your avatar
-$title:			Playin' gamez wif frandz!  Follow meh on twottur!
+$avatar			Your avatar
+$title			Playin' gamez wif frandz!  Follow meh on twottur!
 $streaming		Streaming: Dead by Daylight
 
 */
@@ -82,9 +82,6 @@ $json = json_decode( $content, true );
 $target = $json[ "user" ][ "username" ];
 $avatar = $json[ "user" ][ "avatarUrl" ];
 $channel = "https://mixer.com/$target";
-/*
-$image = $json[ "thumbnail" ][ "url" ];
-*/
 $player = "https://mixer.com/embed/player/$target";
 $streaming = "Streaming: ";
 $streaming .= $json[ "type" ][ "name" ];
